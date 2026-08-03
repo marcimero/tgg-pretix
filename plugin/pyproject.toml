@@ -1,0 +1,24 @@
+[project]
+name = "pretix-tgg-fonts"
+version = "1.0.0"
+description = "Custom fonts for The GOAT Germany pretix: Inter, Geist, Saira, Saira Condensed, Saira Semi Condensed"
+requires-python = ">=3.9"
+keywords = ["pretix"]
+authors = [
+    {name = "The GOAT Germany"},
+]
+dependencies = []
+
+[project.entry-points."pretix.plugin"]
+pretix_tggfonts = "pretix_tggfonts:PretixPluginMeta"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["pretix*"]
+namespaces = false
