@@ -1,0 +1,18 @@
+/*
+ * Custom CSS für den TGG-Ticketshop.
+ * Wird auf allen Shop-Seiten von Events geladen, bei denen das Plugin
+ * "TGG Fonts & Theme" aktiviert ist (Einstellungen → Plugins).
+ *
+ * Ändern: Datei bearbeiten → push → GitHub baut das Image → in Coolify
+ * redeployen.
+ *
+ * Achtung (wie beim originalen Custom-CSS-Plugin): pretix-Updates können
+ * HTML-Templates ändern — nach einem Update kurz prüfen, ob die Selektoren
+ * noch greifen.
+ */
+
+/* Beispiel:
+body {
+    font-family: "Saira Semi Condensed", sans-serif;
+}
+*/
