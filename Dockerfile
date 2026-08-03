@@ -9,8 +9,13 @@ FROM pretix/standalone:stable
 
 USER root
 COPY plugin /tgg-plugin
-RUN pip3 install /tgg-plugin \
-    "git+https://github.com/pretix-unofficial/pretix-custom-css-js.git"
+# --no-build-isolation: pretix-custom-css-js imports django in its setup.py
+# (compilemessages via gettext), so the build must see the image's Python env.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends gettext \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip3 install --no-build-isolation /tgg-plugin \
+        "git+https://github.com/pretix-unofficial/pretix-custom-css-js.git"
 
 USER pretixuser
 RUN cd /pretix/src && make production
