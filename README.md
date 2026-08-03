@@ -4,11 +4,11 @@ Custom pretix-Image für [tickets.thegoatgermany.de](https://tickets.thegoatgerm
 
 ## Inhalt
 
-- **`plugin/` — pretix-tgg-fonts („TGG Fonts & Theme")**:
-  - Eigene Fonts für Ticket-PDFs und den Shop: Inter, Geist, Saira, Saira Condensed, Saira Semi Condensed
-    (Google Fonts, [SIL Open Font License 1.1](https://openfontlicense.org/); Condensed/Semi Condensed ohne Kursive — Italic zeigt die aufrechten Schnitte). Fonts sind global verfügbar, ohne Plugin-Aktivierung.
-  - **Custom Shop-CSS**: `plugin/pretix_tggfonts/static/pretix_tggfonts/custom.css` wird auf allen Shop-Seiten geladen, wenn das Plugin beim Event aktiviert ist (*Einstellungen → Plugins → TGG Fonts & Theme*).
-    Das Marketplace-Plugin `pretix-custom-css-js` ist verwaist und mit pretix ≥ 2024.7 inkompatibel (nutzt entfernte sass-Signale) — deshalb ist die CSS-Injektion hier direkt eingebaut.
+- **`plugin/` — pretix-tgg-fonts**: eigene Fonts für Ticket-PDFs und den Shop:
+  Inter, Geist, Saira, Saira Condensed, Saira Semi Condensed
+  (Google Fonts, [SIL Open Font License 1.1](https://openfontlicense.org/); Condensed/Semi Condensed ohne Kursive — Italic zeigt die aufrechten Schnitte). Global verfügbar, keine Plugin-Aktivierung nötig.
+- **[pretix-event-css-js](https://github.com/nicoknoll/pretix-event-css-js)** (PyPI, gepflegt): Code-Editor für eigenes CSS/JS pro Event — beim Event unter *Einstellungen → Plugins* aktivieren, danach erscheint *Einstellungen → Event CSS & JS*.
+  (Nicht zu verwechseln mit `pretix-custom-css-js` — das ist verwaist und mit pretix ≥ 2024.7 inkompatibel.)
 
 ## Workflow
 

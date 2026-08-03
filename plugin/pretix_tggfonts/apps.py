@@ -5,18 +5,18 @@ from . import __version__
 
 class PluginApp(AppConfig):
     name = "pretix_tggfonts"
-    verbose_name = "TGG Fonts & Theme"
+    verbose_name = "TGG Fonts"
 
     class PretixPluginMeta:
-        name = "TGG Fonts & Theme"
+        name = "TGG Fonts"
         author = "The GOAT Germany"
         description = (
             "Inter, Geist, Saira, Saira Condensed and Saira Semi Condensed "
-            "for ticket PDFs and the shop, plus custom shop CSS (custom.css)"
+            "for ticket PDFs and the shop"
         )
-        # visible so the custom CSS can be enabled per event; the fonts are
-        # registered globally either way (plain signal, not event-scoped).
-        visible = True
+        # Fonts are registered globally (plain signal, not event-scoped),
+        # so there is nothing to enable per event — hide the plugin.
+        visible = False
         version = __version__
         compatibility = "pretix>=2024.7.0"
 

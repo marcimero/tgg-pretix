@@ -1,20 +1,7 @@
 from django.dispatch import receiver
-from django.templatetags.static import static
-from django.utils.safestring import mark_safe
 from pretix.plugins.ticketoutputpdf.signals import register_fonts
-from pretix.presale.signals import html_head
 
 BASE = "pretix_tggfonts"
-
-
-# Shop CSS: injected into <head> of all presale pages of events that have
-# this plugin enabled (Einstellungen → Plugins). Edit static/pretix_tggfonts/
-# custom.css, push, redeploy. The fonts below work regardless of activation.
-@receiver(html_head, dispatch_uid="tgg_custom_css")
-def tgg_custom_css(sender, request=None, **kwargs):
-    return mark_safe(
-        f'<link rel="stylesheet" href="{static(f"{BASE}/custom.css")}">'
-    )
 
 
 def _style(name):
